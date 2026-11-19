@@ -1,1 +1,1 @@
-# kp-news-parser
+# ved-news-parser
