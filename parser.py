@@ -18,10 +18,13 @@ rows = connection.execute("SELECT keyword FROM keywords ORDER BY id").fetchall()
 connection.close()
 
 print("Ключевые слова из базы:")
+
+chosen_keyword = input("Введи своё ключевое слово: ").strip().lower()
+
 for (keyword,) in rows:
     print(keyword)
 
-    if keyword == "сакура":
+    if keyword == chosen_keyword:
         search_page = requests.get(
             "https://api.vedomosti.ru/v2/documents/search",
             params={
